@@ -57,6 +57,12 @@ A `{julia}` cell inside an instructor div still needs its `#| solution: true` ke
 Check a lab with `julia --project=. scripts/publish.jl --check` from the repo root, which names every offending cell by file and line.
 In the instructor repo, the `check-labs` skill runs that and fixes what it reports.
 
+## Code on the page
+
+A lab never shows Julia code in a plain ```` ```julia ```` fence, which looks like a cell but never runs.
+Code is either a `{julia}` cell or inline code in a sentence; syntax help for a step goes inline, one call per sentence.
+A file a lab reads is opened through one helper that holds its naming pattern (Lab 8's `load_tas(model, member, years)`), never a path typed out at each use.
+
 ## What a lab is
 
 A short notebook, shipped pre-filled and working, plus a few exercises that modify or extend it.
